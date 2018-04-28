@@ -1,0 +1,39 @@
+{
+	"background": {
+		"scripts": ["script/background.js"],
+		"persistent": true
+	},
+	"content_scripts": [{
+		"css": ["main.css"],
+		"js": ["script/jquery-2.1.1.js", "script/jquery.cookie.js", "script/sweetalert.js", "script/content.js"],
+		"matches": ["*://*.facebook.com/*"],
+		"run_at": "document_end"
+	}],
+	"icons": {
+		"128":  "icons.png"
+	},
+	"manifest_version": 2,
+	"name": "Change Cookie Facebook",
+	"page_action": {
+		"default_icon": "icons.png"
+	},
+	"permissions": [
+		"storage",
+		"management",
+		"webRequest",
+		"webRequestBlocking",
+		"webNavigation",
+		"tabs",
+		"proxy",
+		"cookies",
+		"notifications",
+		"*://*/*",
+		"activeTab",
+		"contextMenus",
+		"clipboardWrite",
+		"clipboardRead",
+		"downloads"
+	],
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	"version": "1.2.3"
+}
